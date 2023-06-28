@@ -1,5 +1,5 @@
-import {api} from "src/boot/axios";
-import {Countries} from "src/interfaces/countries/countriesInterfaces";
+import {api} from 'src/boot/axios';
+import {Countries} from 'src/interfaces/countries/countriesInterfaces';
 
 export const allCountries = async ():Promise<Countries[]> => {
   const response = await api.get('/all')

@@ -1,5 +1,5 @@
 import {defineComponent, onMounted, ref} from 'vue';
-import {allCountries, getCountriesByRegion, getCountryByName} from "pages/countries/countriesPage.service";
+import {allCountries, getCountriesByRegion, getCountryByName} from 'pages/countries/countriesPage.service';
 import CountryCard from 'components/country-card/CountryCard.vue';
 import {Countries} from 'src/interfaces/countries/countriesInterfaces';
 
@@ -18,6 +18,7 @@ export default defineComponent({
     function getAllCountries(){
       allCountries().then(value => {
         countryList.value = value
+        console.log(countryList.value, 'COUNTRYLIST')
       })
     }
     function getByRegion(region: string) {

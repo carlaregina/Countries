@@ -7,7 +7,8 @@
       <h3>{{ props.name }}</h3>
       <p>Population: {{ props.population }}</p>
       <p>Region: {{ props.region}}</p>
-      <p>Capital: {{props.capital}}</p>
+  <p>Capital:{{props.capital}}</p>
+
     </div>
   </div>
 

@@ -7,7 +7,7 @@ export default defineComponent({
   props:{
     image: String,
     name: String,
-    population: String,
+    population: Number,
     region: String,
     capital: String
   },
@@ -16,7 +16,10 @@ export default defineComponent({
 
     const storeCountry = useCoutryStore()
     const router = useRouter()
+
+
     function getDetails(){
+
       storeCountry.$patch({
         country: props.name
       })
