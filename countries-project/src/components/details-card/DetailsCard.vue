@@ -1,9 +1,14 @@
 
 <template>
-  <div >
+  <div class="q-mt-lg"
+       :class="{
+        'text-very-dark-blue': !props.darkMode,
+        'text-white': props.darkMode
+        }"
+  >
     <img :src="props.image">
 
-    <p>{{props.country}}</p>
+    <p >{{props.name}}</p>
     <P>Native Name: {{props.nativeName}}</P>
     <p>Population: {{props.population}}</p>
     <p>Region:{{props.region}}</p>
@@ -26,7 +31,7 @@
 
 
     <p>Border Countries: </p>
-    <div v-for="(borderCountry, idx) of props.borderCountries" :key="idx">
+    <div v-for="(borderCountry, idx) of props.borderCountries" :key="idx" >
       <span>{{borderCountry}}</span>
     </div>
   </div>

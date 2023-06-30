@@ -10,6 +10,8 @@ export default defineComponent({
 
   setup(){
 
+
+    const darkMode = ref(false)
     const country = ref('')
     const storeCountry = useCoutryStore()
     const router = useRouter()
@@ -17,8 +19,14 @@ export default defineComponent({
 
     const borderCountriesNames = ref<string[]>([])
 
+    storeCountry.$subscribe((mutation, state) => {
+      darkMode.value = state.dark
+    })
+
 
     onMounted( () => {
+      darkMode.value = storeCountry.dark
+
       if (storeCountry.country) {
         country.value = storeCountry.country
        getCountryByName(country.value).then(value => {
@@ -33,17 +41,24 @@ export default defineComponent({
 
 
         })
+
+
       } else {
         router.push('/')
       }
     })
 
+    function backHome(){
+      router.push('/')
+    }
 
     return{
 
       country,
       countryDetail,
-      borderCountriesNames
+      borderCountriesNames,
+      darkMode,
+      backHome
 
     }
 

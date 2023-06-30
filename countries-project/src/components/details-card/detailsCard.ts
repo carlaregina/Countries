@@ -16,6 +16,7 @@ export default defineComponent({
     currencies:  Object as PropType<Jod>,
     languages: Object as PropType<Languages>,
     borderCountries: Array<string>,
+    darkMode: Boolean
 
   },
   setup(props){

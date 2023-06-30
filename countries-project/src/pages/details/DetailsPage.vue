@@ -1,8 +1,46 @@
 <template>
-  <div class="q-ml-sm" v-for="(detail, idx) in countryDetail" :key="idx">
+  <div
+    :class="{
+        'bg-very-dark-blue': darkMode,
+        'bg-very-light-gray':!darkMode
+        }"
 
+       class="detail-page q-px-lg"
+
+       v-for="(detail, idx) in countryDetail" :key="idx">
+
+
+    <q-btn
+      class="q-my-lg"
+      :class="{
+        'bg-very-light-gray': !darkMode,
+        'bg-blue-mode-element': darkMode
+      }"
+
+      @click="backHome()"
+    >
+      <q-icon
+        name="arrow_back"
+        :class="{
+       'text-very-dark-blue': !darkMode,
+        'text-white': darkMode
+      }"
+      >
+
+      </q-icon>
+
+      <span
+        class="q-ml-sm"
+        :class="{
+       'text-very-dark-blue': !darkMode,
+        'text-white': darkMode
+      }"
+
+      >Back</span>
+    </q-btn>
 
   <DetailsCard
+
     :image="detail.flags.png"
     :name="detail.name.common"
     :native-name="detail.name.official"
@@ -14,6 +52,7 @@
     :currencies="detail.currencies"
     :languages="detail.languages"
     :border-countries="borderCountriesNames"
+    :dark-mode="darkMode"
   >
   </DetailsCard>
 
@@ -26,5 +65,7 @@
 </script>
 
 <style lang="scss">
-
+.detail-page{
+  //height: 100vh;
+}
 </style>
