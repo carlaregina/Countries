@@ -2,14 +2,14 @@
   background-color: $very-dark-blue-dark-mode-background;
 }
 .bg-blue-mode-element {
-  background-color: $dark-blue-mode-elements;
+  background-color: $dark-blue-mode-elements !important;
 }
 .text-very-dark-blue {
-  color: $very-dark-blue-light-mode-text
+  color: $very-dark-blue-light-mode-text;
 }
 .bg-very-light-gray {
   background-color: $very-light-gray-light-mode-background;
 }
-.text-white{
-  color:$white-dark-mode-text-and-light-mode-elements
+.text-white {
+  color: $white-dark-mode-text-and-light-mode-elements !important;
 }
