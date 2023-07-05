@@ -1,36 +1,30 @@
-import {defineComponent} from 'vue';
-import {useCoutryStore} from 'stores/country-store';
-import {useRouter} from 'vue-router';
+import { defineComponent } from 'vue';
+import { useCoutryStore } from 'stores/country-store';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
-
-  props:{
+  props: {
     image: String,
     name: String,
     population: Number,
     region: String,
-    capital: String
+    capital: String,
+    darkMode: Boolean,
   },
 
-  setup(props){
+  setup(props) {
+    const storeCountry = useCoutryStore();
+    const router = useRouter();
 
-    const storeCountry = useCoutryStore()
-    const router = useRouter()
-
-
-    function getDetails(){
-
+    function getDetails() {
       storeCountry.$patch({
-        country: props.name
-      })
-      router.push('/details')
+        country: props.name,
+      });
+      router.push('/details');
     }
-    return{
+    return {
       props,
       getDetails,
-
-    }
-
-  }
-
-})
+    };
+  },
+});
