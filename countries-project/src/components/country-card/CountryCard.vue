@@ -8,7 +8,6 @@
     }"
   >
     <img :src="props.image" />
-
     <div
       class="q-pa-md font-size-home w600"
       :class="{
@@ -33,14 +32,16 @@
 <script src="./countryCard"></script>
 <style lang="scss">
 .card-country {
+  cursor: pointer;
   p {
     margin-bottom: 2px;
   }
-  width: 300px;
+  width: 270px;
   border-radius: 4px;
   flex-wrap: unset;
   img {
     border-radius: 4px 4px 0 0;
+    height: 150px;
   }
 }
 .bg-card-white {
